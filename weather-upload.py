@@ -34,13 +34,10 @@ def check_params():
 def main():
     if check_params():
 
-        print("here")
-
         # Update with desired location lat/long
         # returns nearby weather station as a Pandas DataFrame object
         lat, long = float(sys.argv[1]), float(sys.argv[2])
         stations = Stations()
-        print(stations)
         nearby_station = stations.nearby(lat, long).fetch(1)
 
         # Validate location of nearby weather station
@@ -71,7 +68,7 @@ def main():
         # Build csv weather file, verify data saved successfully
         # Update directory path and file name
         dir_path = "/Users/kdeegan/Documents/Python/weather-data-to-adw/"
-        file_name = "TEST_{}_{}_{}_{}_{}_{}_Weather.csv".format(station_name, start_month, start_year, end_month, end_year, sys.argv[5])
+        file_name = "{}_{}_{}_{}_{}_Weather.csv".format(station_name, start_month, start_year, end_month, end_year, sys.argv[5])
         path_name = dir_path + file_name
         print("\nSaving weather data to local file: {}...".format(file_name))
         weather.to_csv(path_name, sep=',')
