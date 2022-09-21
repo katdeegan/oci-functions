@@ -4,7 +4,7 @@ This repository contains Python code that serves as the logic for serverless fun
 
 ## Breakdown of files
 
-## Python files
+### Python files
 weather_from_OS_FINAL.py
 * Code logic that was used to create the serverless function on Oracle's Function service
 
